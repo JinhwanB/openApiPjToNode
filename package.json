@@ -1,0 +1,28 @@
+{
+  "name": "openapinode",
+  "version": "1.0.0",
+  "description": "node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mariadb": "^3.3.0",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "ts-node": "^10.9.2"
+  },
+  "keywords": []
+}
