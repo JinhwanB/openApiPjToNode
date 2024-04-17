@@ -1,6 +1,10 @@
 const getApi = require('../openApi/openApi');
 const DB = require('../database/connect/mariaDBConn');
 
+/**
+ * api를 통해 와이파이 정보를 가져와 1000개씩 db에 저장
+ * @returns 총 db에 저장한 갯수
+ */
 const loadWifiCnt = async () => {
   try {
     const wifiTableCnt = DB.wifiTableCnt();
