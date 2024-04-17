@@ -9,6 +9,7 @@ const pool = mariadb.createPool({
   database: 'openapi',
 });
 
+// db에 연결
 const getConnection = async () => {
   try {
     const conn = await pool.getConnection();
@@ -19,6 +20,7 @@ const getConnection = async () => {
   }
 };
 
+// db연결 해제
 const releaseConnection = async (conn: any) => {
   try {
     await conn.release();
@@ -32,6 +34,7 @@ const INSERT_WIFI_SQL =
   'insert into wifi(X_SWIFI_MGR_NO, X_SWIFI_WRDOFC, X_SWIFI_MAIN_NM, X_SWIFI_ADRES1, X_SWIFI_ADRES2, X_SWIFI_INSTL_FLOOR, X_SWIFI_INSTL_TY, X_SWIFI_INSTL_MBY, X_SWIFI_SVC_SE, X_SWIFI_CMCWR, X_SWIFI_CNSTC_YEAR, X_SWIFI_INOUT_DOOR, X_SWIFI_REMARS3, LAT, LNT, WORK_DTTM) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 const WIFI_TABLE_CNT_SQL = 'select count(*) from wifi';
 
+// wifi 테이블 갯수 가져오기
 const wifiTableCnt = async () => {
   let conn;
   try {
@@ -49,6 +52,7 @@ const wifiTableCnt = async () => {
   }
 };
 
+// wifi 테이블에 저장
 const insertWifi = async (jsonData: object[]) => {
   let conn;
   try {
